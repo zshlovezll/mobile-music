@@ -1,0 +1,176 @@
+body,h2,dl,dd{
+    margin: 0px;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+body{
+    background-size: cover;
+}
+#wrap{
+    width: 100vw;
+    height: 100vh;
+    padding-top:15vw;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .2);
+    .songImg{
+        width: 70vw;
+        height: 40vh;
+        border-radius: 50%;
+        margin: 0 auto;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+
+        }
+    }
+    .songInfo{
+        height: 20vh;
+        margin-top: 6vw;
+        text-align: center;
+        color: #fff;
+        h2{
+            font-weight: bolder;
+            margin-bottom: 3vw;
+            font-size: 20px;
+
+        }
+        div{
+            font-size: 14px;
+        }
+
+    }
+    .progress{
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #fff;
+        line-height:8vh;
+        text-align: center;
+        .curTime{
+            padding: 0 4vw;
+        }   
+        .drag{
+            flex: 1 1 auto;
+            height: 8vw;
+            position: relative;
+            overflow: hidden;
+            .circle{
+                width: 1.5vw;
+                height: 1vh;
+                background:#fff;
+                // border: 1px solid rgba(2,255,255);
+                position: absolute;
+                top: 50%;
+                margin-top: -.5vh;
+                border-radius: 50%;
+                z-index: 2;
+                &:after{
+                    content: "";
+                    width: 3vw;
+                    height: 2vh;
+                    // background:#fff;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1vh;
+                    margin:-5.84px -4px 0px;
+                }
+            }
+            .frontBg{
+                position: absolute;
+                width: 100%;
+                height: .3vh;
+                top: 50%;
+                left: -100%;
+                margin-top: -.05vh;
+                background: #fff;
+                z-index: 2;
+            }
+            .backBg{
+                position: absolute;
+                width: 100%;
+                height: .3vh;
+                top: 50%;
+                margin-top: -.05vh;
+                background: rgba(95, 83, 204, 0.95);
+                z-index: 1;
+
+            }
+        }
+        .totalTime{
+            padding: 0 4vw;
+            
+        }
+    }
+    .control{
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 10vh;
+        bottom: 0;
+        background: rgba(0, 0, 0, .7);
+        li{
+            width: 25%;
+        }
+        li:nth-child(1){
+            background: url(../images/icon-like.png) no-repeat center/40%;
+            &.liking{
+                background: url(../images/icon-like-solid.png) no-repeat center/40%;
+            }
+        }
+        li:nth-child(2){
+            background: url(../images/icon-prev.png) no-repeat center/40%;
+            
+        }
+        li:nth-child(3){
+            background: url(../images/icon-play.png) no-repeat center/40%;
+            &.playing{
+                background: url(../images/icon-pause.png) no-repeat center/40%;
+            }
+        }
+        li:nth-child(4){
+            background: url(../images/icon-next.png) no-repeat center/40%;
+           
+        }
+        li:nth-child(5){
+            background: url(../images/icon-list.png) no-repeat center/40%;
+        }
+    }
+    .list{
+        // display: none;
+        position: fixed;
+        height: 50vh;
+        width: 100vw;
+        overflow-y: scroll;
+        bottom: 0;
+        background: linear-gradient(rgb(5,5,5),rgba(170,170,170,.95));
+        z-index: 4;
+        dt,dd,.close{
+            height: 10vh;
+            line-height: 12vh;
+            font-size: 16px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        dd{
+            padding-left: 3vw;
+            &.active{
+                color: #56b287;
+            }
+        }
+        dt{
+            font-weight: bolder;
+        }
+        dt,.close{
+            text-align: center;
+        }
+    }
+}
